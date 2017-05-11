@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-on</title>
+	</head>
+	<body>
+		<div id="app">
+			<p><input type="text" v-model="message"></p>
+			<p>
+				<button v-on:click="greet">Greet</button>
+			</p>
+			<p>
+				<button v-on:click="say('hi')">Hi</button>
+			</p>
+		</div>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script>
+			var vm=new Vue(
+				{
+					el:'#app',
+					data:{
+					message:'Hello,Vue.js!'
+					},
+					methods:{
+						greet:function(){
+						alert(this.message)	
+						},
+						say:function(msg){
+							alert(msg)
+						}
+					}
+					
+				}
+			)
+			
+		</script>
+	</body>
+</html>

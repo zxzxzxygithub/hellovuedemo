@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-bind</title>
+		<link rel="stylesheet" href="styles/demo.css" />
+	</head>
+	<body>
+	<div id="app">
+		<ul class="pagination">
+			<!--
+            	作者：924106037@qq.com
+            	时间：2017-05-11
+            	描述：此处n从1开始
+            -->
+			<li v-for="n in pageCount">
+				<a href="javascript:void(0)" v-bind:class="activeNumber === n ? 'active' :''">{{ n }}</a>
+			</li>
+		</ul>
+	</div>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script>
+			var vm=new Vue(
+				{
+					el:"#app",
+					data:{
+						activeNumber:1,
+						pageCount:10
+					}
+				}
+			)
+		</script>
+	</body>
+</html>
